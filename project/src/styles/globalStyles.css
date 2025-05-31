@@ -1,0 +1,35 @@
+/* Global Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animation for the Hero section dots */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1c1c1e; /* black */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2C2C2E; /* graphite-gray */
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e19503; /* strong-orange for hover effect */
+}
