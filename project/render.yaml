@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: xyz-data-science
+    env: static
+    buildCommand: ./build.sh
+    staticPublishPath: ./dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: NODE_VERSION
+        value: 18 
