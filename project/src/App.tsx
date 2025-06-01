@@ -13,12 +13,12 @@ import './styles/globalStyles.css';
 function App() {
   useEffect(() => {
     // Update document title
-    document.title = 'FinanceIQ | Risk Intelligence for DeFi';
+    document.title = 'XYZ Data Science | Intelligence for Web3';
     
     // Add meta description
     const metaDescription = document.createElement('meta');
     metaDescription.name = 'description';
-    metaDescription.content = 'FinanceIQ provides data-driven risk intelligence for DeFi protocols through analytics, modeling, and technical insights.';
+    metaDescription.content = 'Working with blockchain based businness to build analystics, models, infrastructure and insights';
     document.head.appendChild(metaDescription);
   }, []);
 
