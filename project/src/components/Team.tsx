@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Github, Linkedin, X } from 'lucide-react';
+import stefiImage from '../assets/images/stefi_pereira.jpg';
+import florianImage from '../assets/images/florian_bargues.jpeg';
 
 interface TeamMember {
   name: string;
@@ -31,7 +33,9 @@ const TeamMemberCard: React.FC<{ member: TeamMember }> = ({ member }) => {
           <div className="flex justify-between items-end">
             <div>
               <h3 className="text-xl font-bold text-white">{member.name}</h3>
-              <p className="text-gray-300">{member.role}</p>
+              <p className="text-gray-300">{member.role.includes('&') ? member.role.split('&').map((part, i) => 
+                i === 0 ? <span key={i}>{part.trim()} <br /></span> : <span key={i}>& {part.trim()}</span>
+              ) : member.role}</p>
             </div>
             <div className="flex space-x-2">
               {member.social.twitter && (
@@ -41,7 +45,7 @@ const TeamMemberCard: React.FC<{ member: TeamMember }> = ({ member }) => {
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-strong-orange/80  transition-colors"
                 >
-                  <X size={18} />
+                  <X size={18} />s
                 </a>
               )}
               {member.social.linkedin && (
@@ -107,33 +111,30 @@ const Team: React.FC = () => {
   const teamMembers: TeamMember[] = [
     {
       name: 'Stefi Pereira',
-      role: 'Founder & Head of Strategy',
-      bio: 'Data scientist by experience, with years of experience in on-chain data. She leads strategy, client relationships, and oversees project execution.',
+      role: 'Founder & Lead Data Scientist',
+      bio: 'Data Scientist with years of experience in on-chain data. She leads strategy, client relationships, and oversees project execution.',
       highlights: [
-        'Ex-Gitcoin Passport data scientist',
+        'Ex-Gitcoin Passport Data Scientist',
         'Co-created a data service offering that helped drive $1M in revenue in 2024',
-        'Deployed ML algorithms detecting sybil behavioral patterns, scoring 250K+ users monthly',
+        'Deployed ML algorithms detecting sybil behavioral patterns, scoring 250K+ users monthly'
       ],
-      image: 'https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: stefiImage,
       social: {
-        twitter: 'https://twitter.com',
-        linkedin: 'https://linkedin.com',
-        github: 'https://github.com'
+        linkedin: 'https://www.linkedin.com/in/vieirastefani/?locale=en_US',
+        github: 'https://github.com/stefi-says'
       }
     },
     {
-      name: 'Florian',
+      name: 'Florian Bargues',
       role: 'Lead DeFi Consultant',
-      bio: 'Ex-Binance Labs, DeFi researcher with a background in protocol and risk management.',
+      bio: 'Former DeFi Researcher at Binance Labs and Fountainhead Digital. Engineer in mathematics and mechanics with a passion for decentralized finance.',
       highlights: [
-        'Ex-Binance Labs, DeFi researcher with a background in protocol and risk management.',
-        'Contributed to multiple open-source DeFi projects'
+        'Creator of DeFiscan: a real-time DeFi analytics app for AAVE and SPARK across major chains.'
       ],
-      image: 'https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: florianImage,
       social: {
-        twitter: 'https://twitter.com',
-        linkedin: 'https://linkedin.com',
-        github: 'https://github.com'
+        linkedin: 'https://www.linkedin.com/in/florian-bargues-a1211a196/',
+        github: 'https://github.com/ProtocolCHecker/'
       }
     },
     // {
