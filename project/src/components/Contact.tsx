@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { MessageCircle, Mail, Send, CheckCircle } from 'lucide-react';
+import ReactGA from 'react-ga4';
 
 const Contact: React.FC = () => {
   const [formState, setFormState] = useState({
@@ -19,6 +20,13 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setFormState(prev => ({ ...prev, submitting: true }));
     
+    // Track form submission
+    ReactGA.event({
+      category: 'Form',
+      action: 'Submit',
+      label: 'Contact Form'
+    });
+    
     // Simulate form submission
     setTimeout(() => {
       setFormState(prev => ({ 
@@ -30,6 +38,15 @@ const Contact: React.FC = () => {
         message: ''
       }));
     }, 1500);
+  };
+
+  // Track contact method clicks
+  const trackContactClick = (method: string) => {
+    ReactGA.event({
+      category: 'Contact',
+      action: 'Click',
+      label: method
+    });
   };
 
   return (
@@ -148,6 +165,7 @@ const Contact: React.FC = () => {
                       href="https://wa.me/5391170800728" 
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => trackContactClick('WhatsApp')}
                       className="bg-strong-orange p-3 rounded-lg mr-4 hover:bg-strong-orange/80 transition-colors"
                     >
                       <MessageCircle className="h-8 w-8 text-white" />
@@ -165,6 +183,7 @@ const Contact: React.FC = () => {
                       href="https://t.me/hey_stefi" 
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => trackContactClick('Telegram')}
                       className="bg-strong-orange p-3 rounded-lg mr-4 hover:bg-strong-orange/80 transition-colors"
                     >
                       <svg
@@ -189,7 +208,8 @@ const Contact: React.FC = () => {
                   
                   <div className="flex items-start p-4">
                     <a 
-                      href="mailto:stefi@xyzdatascience.com" 
+                      href="mailto:stefi@xyzdatascience.com"
+                      onClick={() => trackContactClick('Email')}
                       className="bg-strong-orange p-3 rounded-lg mr-4 hover:bg-strong-orange/80 transition-colors"
                     >
                       <Mail className="h-8 w-8 text-white" />
