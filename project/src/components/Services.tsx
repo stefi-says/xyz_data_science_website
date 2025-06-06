@@ -20,7 +20,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   iconClassName = "text-blue-500 group-hover:text-blue-400" 
 }) => {
   const encodedMessage = encodeURIComponent(telegramMessage);
-  const telegramLink = `https://t.me/hey_stefi?start=${encodedMessage}`;
+  const telegramLink = `https://t.me/hey_stefi?text=${encodedMessage}`;
   
   // Track service click event
   const handleServiceClick = () => {
