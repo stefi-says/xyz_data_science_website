@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 md:px-6 z-10">
+      <div className="container mx-auto px-4 md:px-6 z-10 relative">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-offset-white mb-6 leading-tight">
           Analytics Solutions for
@@ -76,11 +76,13 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </div>
-
+      
       {/* Scroll Down Indicator */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-8 h-12 rounded-full border-2 border-white flex justify-center items-start p-1">
-          <div className="w-1 h-3 bg-white rounded-full animate-pulse"></div>
+      <div className="absolute bottom-10 left-0 right-0 flex justify-center z-10">
+        <div className="animate-bounce">
+          <div className="w-8 h-12 rounded-full border-2 border-white flex justify-center items-center p-1">
+            <div className="w-1 h-3 bg-white rounded-full animate-pulse"></div>
+          </div>
         </div>
       </div>
     </div>

@@ -84,7 +84,7 @@ const TeamMemberCard: React.FC<{ member: TeamMember }> = ({ member }) => {
                 {member.highlights.map((highlight, index) => (
                   <li key={index} className="flex items-start">
                     <span className="text-strong-orange mr-2">•</span>
-                    <span>{highlight}</span>
+                    <span dangerouslySetInnerHTML={{ __html: highlight }}></span>
                   </li>
                 ))}
               </ul>
@@ -129,7 +129,7 @@ const Team: React.FC = () => {
       role: 'Lead DeFi Consultant',
       bio: 'Former DeFi Researcher at Binance Labs and Fountainhead Digital. Engineer in mathematics and mechanics with a passion for decentralized finance.',
       highlights: [
-        'Creator of DeFiscan: a real-time DeFi analytics app for AAVE and SPARK across major chains.'
+        'Creator of <a href="https://stalwart-sunshine-ba4016.netlify.app/" target="_blank" rel="noopener noreferrer" class="text-strong-orange hover:underline">DeFiscan</a>: a real-time DeFi analytics app for AAVE and SPARK across major chains.'
       ],
       image: florianImage,
       social: {

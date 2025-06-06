@@ -4,5 +4,8 @@
   "version": "1.0.0",
   "scripts": {
     "build": "cd project && npm install && npm run build"
+  },
+  "dependencies": {
+    "lucide-react": "^0.513.0"
   }
-} 
+}
