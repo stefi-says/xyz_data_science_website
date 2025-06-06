@@ -55,7 +55,7 @@ const Hero: React.FC = () => {
                   fill="currentColor"
                 />
               </svg>
-              Message Us on Telegram
+              Contact Us
             </a>
           </div>
         </div>

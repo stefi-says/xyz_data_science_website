@@ -1,15 +1,36 @@
 import React from 'react';
 import { Database, BarChart2, AlertCircle, ArrowRight } from 'lucide-react';
+import ReactGA from 'react-ga4';
 
 interface ServiceCardProps {
   icon: React.ReactNode;
   title: string;
   description: string;
   features: string[];
+  telegramMessage: string;
   iconClassName?: string;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, features, iconClassName = "text-blue-500 group-hover:text-blue-400" }) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({ 
+  icon, 
+  title, 
+  description, 
+  features, 
+  telegramMessage,
+  iconClassName = "text-blue-500 group-hover:text-blue-400" 
+}) => {
+  const encodedMessage = encodeURIComponent(telegramMessage);
+  const telegramLink = `https://t.me/hey_stefi?start=${encodedMessage}`;
+  
+  // Track service click event
+  const handleServiceClick = () => {
+    ReactGA.event({
+      category: 'Services',
+      action: 'Click',
+      label: `Learn More - ${title}`
+    });
+  };
+  
   return (
     <div className="bg-graphite-grey rounded-xl p-6 transition-all duration-300 hover:shadow-xl hover:shadow-strong-orange/30 hover:translate-y-[-4px] group">
       <div className={`mb-4 transition-colors ${iconClassName}`}>{icon}</div>
@@ -26,9 +47,15 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, fea
       </ul>
       
       <div className="mt-auto">
-        <button className="text-strong-orange hover:text-light-orange inline-flex items-center group-hover:underline">
+        <a 
+          href={telegramLink} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          onClick={handleServiceClick}
+          className="text-strong-orange hover:text-light-orange inline-flex items-center group-hover:underline"
+        >
           Learn more <ArrowRight className="ml-1 h-4 w-4" />
-        </button>
+        </a>
       </div>
     </div>
   );
@@ -45,6 +72,7 @@ const Services: React.FC = () => {
         "Real-time data processing", 
         "Data normalization"
       ],
+      telegramMessage: "Hi, I would like to know more about the Data Integration Service you provide",
       iconClassName: "text-strong-orange group-hover:text-light-orange"
     },
     {
@@ -57,6 +85,7 @@ const Services: React.FC = () => {
         "Liquidity flow visualization",
         "User base analysis and reports"
       ],
+      telegramMessage: "Hi, I'm interested in learning more about your Analytics & Modeling services",
       iconClassName: "text-strong-orange group-hover:text-light-orange"
     },
     {
@@ -70,6 +99,7 @@ const Services: React.FC = () => {
         "Risk parameter optimization", 
         "Web3 campaign incentives design"
       ],
+      telegramMessage: "Hi, I would like to learn more about your Consulting Services",
       iconClassName: "text-strong-orange group-hover:text-light-orange"
     }
   ];
@@ -93,6 +123,7 @@ const Services: React.FC = () => {
               title={service.title}
               description={service.description}
               features={service.features}
+              telegramMessage={service.telegramMessage}
               iconClassName={service.iconClassName}
             />
           ))}

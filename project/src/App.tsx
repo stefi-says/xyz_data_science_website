@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import ReactGA from 'react-ga4';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -20,6 +21,9 @@ function App() {
     metaDescription.name = 'description';
     metaDescription.content = 'Working with blockchain based businness to build analystics, models, infrastructure and insights';
     document.head.appendChild(metaDescription);
+
+    // Send page view to Google Analytics
+    ReactGA.send({ hitType: "pageview", page: window.location.pathname });
   }, []);
 
   return (

@@ -1,5 +1,6 @@
 import { useState, useEffect, FC } from 'react';
 import { Menu, X } from 'lucide-react';
+import ReactGA from 'react-ga4';
 import logoImage from '../assets/images/xyz_top_logo.png';
 
 const Header: FC = () => {
@@ -22,9 +23,26 @@ const Header: FC = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
+      // Track navigation event
+      ReactGA.event({
+        category: 'Navigation',
+        action: 'Click',
+        label: `Navigated to ${id}`
+      });
+      
       element.scrollIntoView({ behavior: 'smooth' });
       setIsMobileMenuOpen(false);
     }
+  };
+
+  // Track mobile menu interactions
+  const toggleMobileMenu = (isOpen: boolean) => {
+    ReactGA.event({
+      category: 'Navigation',
+      action: isOpen ? 'Open Mobile Menu' : 'Close Mobile Menu',
+      label: 'Mobile Navigation'
+    });
+    setIsMobileMenuOpen(isOpen);
   };
 
   return (
@@ -58,7 +76,7 @@ const Header: FC = () => {
           {/* Mobile Menu Button */}
           <button
             className="md:hidden text-white"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            onClick={() => toggleMobileMenu(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
