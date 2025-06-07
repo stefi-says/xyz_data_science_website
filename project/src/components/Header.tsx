@@ -1,7 +1,7 @@
 import { useState, useEffect, FC } from 'react';
 import { Menu, X } from 'lucide-react';
 import ReactGA from 'react-ga4';
-import logoImage from '../assets/images/xyz_top_logo.png';
+import logoImage from '../assets/images/light_xyz_logo.png';
 
 const Header: FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
