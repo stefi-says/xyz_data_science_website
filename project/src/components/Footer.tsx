@@ -1,6 +1,6 @@
 import React from 'react';
 import { Github, Linkedin, Twitter } from 'lucide-react';
-import logoImage from '../assets/images/xyz_top_logo.png';
+import logoImage from '../assets/images/light_xyz_logo.png';
 
 const Footer: React.FC = () => {
   return (
