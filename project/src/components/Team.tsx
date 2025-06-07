@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Github, Linkedin, X } from 'lucide-react';
-import stefiImage from '../assets/images/stefi_pereira.jpg';
+import stefiImage from '../assets/images/stefi_xyz_data_science.jpeg';
 import florianImage from '../assets/images/florian_bargues.jpeg';
 
 interface TeamMember {
