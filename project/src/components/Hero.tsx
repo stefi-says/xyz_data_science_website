@@ -1,8 +1,23 @@
 import React from 'react';
 import { MessageCircle } from 'lucide-react';
+import ReactGA from 'react-ga4';
 import dynamicBackground from '../assets/images/dynamic_background.mp4';
 
 const Hero: React.FC = () => {
+  // Custom message for Telegram
+  const message = "Hey, I would like to chat about how your services could help my business";
+  const encodedMessage = encodeURIComponent(message);
+  const telegramLink = `https://t.me/hey_stefi?text=${encodedMessage}`;
+
+  // Track hero contact button click
+  const handleContactClick = () => {
+    ReactGA.event({
+      category: 'Contact',
+      action: 'Click',
+      label: 'Hero Contact Button'
+    });
+  };
+
   return (
     <div className="relative min-h-screen flex items-center pt-16 overflow-hidden">
       {/* Video Background */}
@@ -20,7 +35,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 md:px-6 z-10">
+      <div className="container mx-auto px-4 md:px-6 z-10 relative">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-offset-white mb-6 leading-tight">
           Analytics Solutions for
@@ -39,9 +54,10 @@ const Hero: React.FC = () => {
               <MessageCircle className="mr-2 h-5 w-5" /> Contact Us via WhatsApp
             </a> */}
             <a
-              href="https://t.me/hey_stefi"
+              href={telegramLink}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={handleContactClick}
               className="bg-light-gray border border-white hover:bg-light-orange text-white font-medium py-3 px-6 rounded-lg transition-colors duration-300 inline-flex items-center justify-center"
             >
               <svg
@@ -60,11 +76,13 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </div>
-
+      
       {/* Scroll Down Indicator */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-8 h-12 rounded-full border-2 border-white flex justify-center items-start p-1">
-          <div className="w-1 h-3 bg-white rounded-full animate-pulse"></div>
+      <div className="absolute bottom-10 left-0 right-0 flex justify-center z-10">
+        <div className="animate-bounce">
+          <div className="w-8 h-12 rounded-full border-2 border-white flex justify-center items-center p-1">
+            <div className="w-1 h-3 bg-white rounded-full animate-pulse"></div>
+          </div>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Database, BarChart2, AlertCircle, ArrowRight } from 'lucide-react';
+import { Database, BarChart2, CircleUser, ArrowRight } from 'lucide-react';
 import ReactGA from 'react-ga4';
 
 interface ServiceCardProps {
@@ -20,7 +20,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   iconClassName = "text-blue-500 group-hover:text-blue-400" 
 }) => {
   const encodedMessage = encodeURIComponent(telegramMessage);
-  const telegramLink = `https://t.me/hey_stefi?start=${encodedMessage}`;
+  const telegramLink = `https://t.me/hey_stefi?text=${encodedMessage}`;
   
   // Track service click event
   const handleServiceClick = () => {
@@ -89,7 +89,7 @@ const Services: React.FC = () => {
       iconClassName: "text-strong-orange group-hover:text-light-orange"
     },
     {
-      icon: <AlertCircle className="h-10 w-10" />,
+      icon: <CircleUser className="h-10 w-10" />,
       title: "Consulting Services",
       description: "Hands-on advisory for protocols navigating DeFi's complex landscape.",
       features: [
