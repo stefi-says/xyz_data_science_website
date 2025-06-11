@@ -25,9 +25,10 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   // Track service click event
   const handleServiceClick = () => {
     ReactGA.event({
-      category: 'Services',
-      action: 'Click',
-      label: `Learn More - ${title}`
+      category: 'User Interaction',
+      action: 'service_click',
+      label: `${title}`,
+      service_name: title
     });
   };
   

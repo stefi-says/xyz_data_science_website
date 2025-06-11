@@ -23,7 +23,11 @@ function App() {
     document.head.appendChild(metaDescription);
 
     // Send page view to Google Analytics
-    ReactGA.send({ hitType: "pageview", page: window.location.pathname });
+    ReactGA.send({
+      hitType: "pageview",
+      page: window.location.pathname,
+      title: document.title
+    });
   }, []);
 
   return (

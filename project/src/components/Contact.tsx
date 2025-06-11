@@ -22,9 +22,10 @@ const Contact: React.FC = () => {
     
     // Track form submission
     ReactGA.event({
-      category: 'Form',
-      action: 'Submit',
-      label: 'Contact Form'
+      category: 'User Interaction',
+      action: 'form_submit',
+      label: 'Contact Form',
+      form_type: 'contact'
     });
     
     // Simulate form submission
@@ -43,9 +44,10 @@ const Contact: React.FC = () => {
   // Track contact method clicks
   const trackContactClick = (method: string) => {
     ReactGA.event({
-      category: 'Contact',
-      action: 'Click',
-      label: method
+      category: 'User Interaction',
+      action: 'contact_method_click',
+      label: method,
+      contact_type: method
     });
   };
 
