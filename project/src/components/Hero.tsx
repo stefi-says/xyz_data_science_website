@@ -12,9 +12,10 @@ const Hero: React.FC = () => {
   // Track hero contact button click
   const handleContactClick = () => {
     ReactGA.event({
-      category: 'Contact',
-      action: 'Click',
-      label: 'Hero Contact Button'
+      category: 'User Interaction',
+      action: 'hero_contact_click',
+      label: 'Telegram',
+      button_location: 'hero'
     });
   };
 

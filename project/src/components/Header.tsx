@@ -20,14 +20,15 @@ const Header: FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
+  const scrollToSection = (id: string) => { 
     const element = document.getElementById(id);
     if (element) {
-      // Track navigation event
+      // Updated GA4 format
       ReactGA.event({
-        category: 'Navigation',
-        action: 'Click',
-        label: `Navigated to ${id}`
+        category: 'User Interaction',
+        action: 'navigation_click',
+        label: id,
+        menu_type: 'desktop'
       });
       
       element.scrollIntoView({ behavior: 'smooth' });
@@ -35,12 +36,12 @@ const Header: FC = () => {
     }
   };
 
-  // Track mobile menu interactions
+  // Track mobile menu interactions with updated GA4 format
   const toggleMobileMenu = (isOpen: boolean) => {
     ReactGA.event({
-      category: 'Navigation',
-      action: isOpen ? 'Open Mobile Menu' : 'Close Mobile Menu',
-      label: 'Mobile Navigation'
+      category: 'User Interaction',
+      action: 'mobile_menu_toggle',
+      label: isOpen ? 'open' : 'close'
     });
     setIsMobileMenuOpen(isOpen);
   };
