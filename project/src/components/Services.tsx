@@ -66,12 +66,12 @@ const Services: React.FC = () => {
   const services = [
     {
       icon: <Database className="h-10 w-10" />,
-      title: "Data Pipeline Integration",
-      description: "Custom ETL workflows and Web3 indexing solutions for DeFi data.",
+      title: "Data Pipeline Integration and Automations",
+      description: "Custom data integrations and processes automation into your existing systems.",
       features: [
         "Custom blockchain data pipelines",
-        "Real-time data processing", 
-        "Data normalization"
+        "Automations using AI and machine learning",
+        "Real-time data processing"
       ],
       telegramMessage: "Hi, I would like to know more about the Data Integration Service you provide",
       iconClassName: "text-strong-orange group-hover:text-light-orange"
@@ -79,12 +79,12 @@ const Services: React.FC = () => {
     {
       icon: <BarChart2 className="h-10 w-10" />,
       title: "Analytics & Modeling",
-      description: "Bespoke dashboards and protocol-level simulations for strategic insights.",
+      description: "Bespoke dashboards and reports for strategic insights.",
       features: [
-        "Risk modeling & stress testing",
+        "User base analysis and reports",
+        "Marketing campaigns and grants impact analysis",
         "Custom analytics dashboards",
-        "Liquidity flow visualization",
-        "User base analysis and reports"
+        "Custom predicitive model development and implementation"
       ],
       telegramMessage: "Hi, I'm interested in learning more about your Analytics & Modeling services",
       iconClassName: "text-strong-orange group-hover:text-light-orange"
@@ -92,13 +92,11 @@ const Services: React.FC = () => {
     {
       icon: <CircleUser className="h-10 w-10" />,
       title: "Consulting Services",
-      description: "Hands-on advisory for protocols navigating DeFi's complex landscape.",
+      description: "Hands-on advisory for protocols navigating the blockchain landscape.",
       features: [
-        "Collateral risk assessment",
-        "Liquidation strategy design",
-        "Governance mechanism review",
-        "Risk parameter optimization", 
-        "Web3 campaign incentives design"
+        "Growth metrics and KPIs definition",
+        "Web3 campaign incentives design",
+        "Process analysis for automation and optimization"
       ],
       telegramMessage: "Hi, I would like to learn more about your Consulting Services",
       iconClassName: "text-strong-orange group-hover:text-light-orange"
@@ -111,7 +109,7 @@ const Services: React.FC = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Our Services</h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Comprehensive solutions tailored for protocols and DAOs navigating the evolving Web3 data landscape
+            Comprehensive solutions tailored for businesses and DAOs growth, transparency and ROI optimization.
           </p>
           <div className="w-24 h-1 bg-light-orange mx-auto mt-6"></div>
         </div>

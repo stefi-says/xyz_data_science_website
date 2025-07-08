@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
               <span className="text-white font-bold text-xl">XYZ Data Science</span>
             </div>
             <p className="text-gray-400 mb-6">
-              Empowering Web3 protocols through data-driven modeling, risk analysis, and technical insight.
+            Empowering Web3 businesses with data-driven modeling, transparent growth metrics, and honest insights you can share with your community.
             </p>
             <div className="flex space-x-4">
               <a
