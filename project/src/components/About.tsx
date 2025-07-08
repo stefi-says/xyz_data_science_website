@@ -14,11 +14,10 @@ const About: React.FC = () => {
           {/* Main content - always shows first on mobile */}
           <div className="w-full lg:order-1">
             <p className="text-gray-300 text-lg mb-6  leading-relaxed">
-            With years of experience and a passion for helping crypto business succeed, XYZ team is composed by expert data scientists and engineers 
-            specialized in on-chain data pipelines, DeFi risk analysis and user base  on-chain analysis to tailored the precise solution you need.
+            Our mission is to transform complex blockchain data into clear insights that help Web3 projects grow, build trust, and deliver meaningful value to their communities. We know the difference between raw data and real answers—and we’re here to bridge that gap.
             </p>
             <p className="text-gray-300 text-lg mb-8 leading-relaxed">
-            Our mission is to work together with you to provide the best data-driven solutions to help crypto businesses thrive in the ever-evolving blockchain landscape.
+            At XYZ Data Science, we focus on making your data work for you. That means helping you see what’s really happening, understand what matters, and share those insights with the people who need them—whether it’s your team, your partners, or your entire community.
             </p>
           </div>
 

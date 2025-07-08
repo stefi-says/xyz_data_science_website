@@ -14,6 +14,7 @@ import './styles/globalStyles.css';
 function App() {
   useEffect(() => {
     // Update document title
+    ReactGA.initialize('G-65C0F43X1H'); 
     document.title = 'XYZ Data Science | Intelligence for Web3';
     
     // Add meta description

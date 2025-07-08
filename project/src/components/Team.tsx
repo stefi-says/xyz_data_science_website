@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Github, Linkedin, X } from 'lucide-react';
-import stefiImage from '../assets/images/stefi_xyz_data_science.jpeg';
+import stefiImage from '../assets/images/stefi_pereira_xyz_data_science.jpeg';
 import florianImage from '../assets/images/florian_bargues.jpeg';
 
 interface TeamMember {
@@ -123,20 +123,20 @@ const Team: React.FC = () => {
         linkedin: 'https://www.linkedin.com/in/vieirastefani/?locale=en_US',
         github: 'https://github.com/stefi-says'
       }
-    },
-    {
-      name: 'Florian Bargues',
-      role: 'Lead DeFi Consultant',
-      bio: 'Former DeFi Researcher at Binance Labs and Fountainhead Digital. Engineer in mathematics and mechanics with a passion for decentralized finance.',
-      highlights: [
-        'Creator of <a href="https://stalwart-sunshine-ba4016.netlify.app/" target="_blank" rel="noopener noreferrer" class="text-strong-orange hover:underline">DeFiscan</a>: a real-time DeFi analytics app for AAVE and SPARK across major chains.'
-      ],
-      image: florianImage,
-      social: {
-        linkedin: 'https://www.linkedin.com/in/florian-bargues-a1211a196/',
-        github: 'https://github.com/ProtocolCHecker/'
-      }
-    },
+    }
+    // {
+    //   name: 'Florian Bargues',
+    //   role: 'Lead DeFi Consultant',
+    //   bio: 'Former DeFi Researcher at Binance Labs and Fountainhead Digital. Engineer in mathematics and mechanics with a passion for decentralized finance.',
+    //   highlights: [
+    //     'Creator of <a href="https://stalwart-sunshine-ba4016.netlify.app/" target="_blank" rel="noopener noreferrer" class="text-strong-orange hover:underline">DeFiscan</a>: a real-time DeFi analytics app for AAVE and SPARK across major chains.'
+    //   ],
+    //   image: florianImage,
+    //   social: {
+    //     linkedin: 'https://www.linkedin.com/in/florian-bargues-a1211a196/',
+    //     github: 'https://github.com/ProtocolCHecker/'
+    //   }
+    // },
     // {
     //   name: 'Elena Park',
     //   role: 'Protocol Specialist',
@@ -173,28 +173,35 @@ const Team: React.FC = () => {
     <section id="team" className="py-24 bg-charcoal-black">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Our Team</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">About XYZ Data Science</h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            DeFi natives with deep expertise across risk, data science, and protocol design
+          Helping Web3 teams grow with smart data insights
           </p>
           <div className="w-24 h-1 bg-strong-orange mx-auto mt-6"></div>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-7">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-7 lg:w-1/2">
+        <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-1 gap-6 lg:w-1/3">
             {teamMembers.map((member, index) => (
               <TeamMemberCard key={index} member={member} />
             ))}
           </div>
           
-          <div className="bg-charcoal-black flex flex-col justify-center h-full lg:w-1/2 p-6">
+          <div className="bg-charcoal-black flex flex-col justify-start lg:justify-center lg:w-3/4 lg:pl-4 lg:pr-2 py-6">
              
-            <p className="text-gray-300">
-            Our team blends deep technical expertise with real-world impact. From building models that scale user bases to navigating the complexities of DeFi risk, we combine rigorous data science with strategic thinking. We've worked in fast-paced, high-stakes environments and know what it takes to deliver results with precision and care.
+            <p className="text-gray-300 leading-relaxed">
+            Every project is unique. XYZ Data Science combines dedicated leadership with a curated network of experienced partners and contractors. I bring deep technical expertise with real-world impact, from building models that scale user bases to optimizing ROI in Web3 marketing, grants, and growth.
             <br />
             <br />
-            We work directly with each client to understand their unique context and business moment, curating solutions that are not just effective—but truly aligned with their goals. At our core, we're partners our clients can trust—committed to turning complexity into clarity.
+            I work closely with each client to understand their goals and context, designing solutions that are effective, tailored, and aligned with their strategy. My commitment is to be the partner you can trust—turning complexity into clear, actionable insights that drive your growth
             </p>
+            
+            <div className="mt-8 pt-6 border-t border-strong-orange/20">
+              <blockquote className="text-lg italic text-gray-200 leading-relaxed mb-4 indent-8">
+              "My goal isn't just to deliver data—it's to make sure you get real, useful answers you can trust and share with your partners and community"
+              </blockquote>
+              <p className="text-strong-orange italic font-medium">— Stefi Pereira</p>
+            </div>
           </div>
         </div>
       </div>

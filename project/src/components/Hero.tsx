@@ -1,6 +1,6 @@
 import React from 'react';
-import { MessageCircle } from 'lucide-react';
 import ReactGA from 'react-ga4';
+console.log('GA version:', ReactGA);
 import dynamicBackground from '../assets/images/dynamic_background.mp4';
 
 const Hero: React.FC = () => {
@@ -11,11 +11,9 @@ const Hero: React.FC = () => {
 
   // Track hero contact button click
   const handleContactClick = () => {
-    ReactGA.event({
-      category: 'User Interaction',
-      action: 'hero_contact_click',
-      label: 'Telegram',
-      button_location: 'hero'
+    ReactGA.event('hero_contact_click', {
+      method: 'Telegram',
+      location: 'hero' 
     });
   };
 
@@ -32,7 +30,7 @@ const Hero: React.FC = () => {
           <source src={dynamicBackground} type="video/mp4" />
         </video>
         {/* Overlay to ensure text readability */}
-        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="absolute inset-0 bg-black opacity-60"></div>
       </div>
 
       {/* Content */}
@@ -42,8 +40,8 @@ const Hero: React.FC = () => {
           Analytics Solutions for
             <span className="block text-strong-orange"> Web3 Business</span>
           </h1>
-          <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
-            Empowering protocols through data-driven modeling, risk analysis, and technical insight. 
+          <p className="text-lg md:text-xl text-gray-280 mb-8 leading-relaxed pl-6">
+          Empowering Web3 businesses with data-driven modeling, transparent growth metrics, and honest insights for their partiners and communities.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             {/* <a
